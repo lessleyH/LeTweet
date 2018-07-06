@@ -11,23 +11,13 @@
         android:id="@+id/etTweetCompose"
         android:layout_width="274dp"
         android:layout_height="104dp"
-        android:layout_alignTop="@+id/ivProfileImg"
-        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="102dp"
+        android:layout_toEndOf="@+id/ibXbbtn"
         android:ems="10"
         android:hint="What's happening?"
         android:inputType="textPersonName"
         tools:layout_editor_absoluteX="55dp"
-        tools:layout_editor_absoluteY="53dp" />
-
-    <ImageView
-        android:id="@+id/ivProfileImg"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="87dp"
-        app:srcCompat="@android:color/black"
-        tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="53dp" />
 
     <ImageButton

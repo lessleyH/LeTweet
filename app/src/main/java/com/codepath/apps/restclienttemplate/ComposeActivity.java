@@ -27,6 +27,19 @@ public class ComposeActivity extends AppCompatActivity {
     public TextView tvCount;
     private Tweet tweet;
 
+    private final TextWatcher teWatcher = new TextWatcher() {
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+        }
+
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+            //This sets a textview to the current length
+            tvCount.setText(String.valueOf(s.length()) +"/280 char.");
+        }
+
+        public void afterTextChanged(Editable s) {
+        }
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,7 +58,7 @@ public class ComposeActivity extends AppCompatActivity {
                 try{
                     tweet = Tweet.fromJSON(response);
                     Intent intent = new Intent(ComposeActivity.this, TimelineActivity.class);
-                    intent.putExtra("Composed_tweet", Parcels.wrap(tweet));
+                    intent.putExtra(Parcels.class.getSimpleName(), Parcels.wrap(tweet));
                     setResult(13, intent);
                     finish();
 
@@ -57,7 +70,7 @@ public class ComposeActivity extends AppCompatActivity {
             @Override
             public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
                 super.onFailure(statusCode, headers, throwable, errorResponse);
-                finish();
+                //finish();
             }
         };
 
@@ -72,16 +85,5 @@ public class ComposeActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    private final TextWatcher teWatcher = new TextWatcher() {
-        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-        }
 
-        public void onTextChanged(CharSequence s, int start, int before, int count) {
-            //This sets a textview to the current length
-            tvCount.setText(String.valueOf(s.length()) +"/280 ");
-        }
-
-        public void afterTextChanged(Editable s) {
-        }
-    };
 }

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -10,6 +11,8 @@
         android:id="@+id/etTweetCompose"
         android:layout_width="274dp"
         android:layout_height="104dp"
+        android:layout_alignTop="@+id/ivProfileImg"
+        android:layout_centerHorizontal="true"
         android:ems="10"
         android:hint="What's happening?"
         android:inputType="textPersonName"
@@ -20,6 +23,9 @@
         android:id="@+id/ivProfileImg"
         android:layout_width="50dp"
         android:layout_height="50dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="87dp"
         app:srcCompat="@android:color/black"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="53dp" />
@@ -28,15 +34,19 @@
         android:id="@+id/ibTweetBttn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
         android:onClick="composeTweetClick"
-        app:srcCompat="@drawable/tweet"
-        tools:layout_editor_absoluteX="237dp"
+        app:srcCompat="@drawable/ic_vector_compose"
+        tools:layout_editor_absoluteX="329dp"
         tools:layout_editor_absoluteY="0dp" />
 
     <TextView
         android:id="@+id/tvCount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/etTweetCompose"
+        android:layout_below="@+id/etTweetCompose"
         android:text="0/280"
         tools:layout_editor_absoluteX="292dp"
         tools:layout_editor_absoluteY="157dp" />
@@ -45,9 +55,11 @@
         android:id="@+id/ibXbbtn"
         android:layout_width="44dp"
         android:layout_height="50dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         android:onClick="exitClick"
         app:srcCompat="@drawable/ic_vector_close"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="0dp" />
 
-</android.support.constraint.ConstraintLayout>
+</RelativeLayout>

@@ -16,7 +16,6 @@ public class Tweet {
     public String likes;
     public String retweet;
 
-
     //deserialized the JSON
     public static Tweet fromJSON(JSONObject jsonObject) throws JSONException{
         Tweet tweet = new Tweet();
